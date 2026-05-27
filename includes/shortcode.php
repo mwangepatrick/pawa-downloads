@@ -18,7 +18,7 @@ function pawa_dl_shortcode( $atts ) {
     $downloads = get_posts( [
         'post_type'      => 'pawa_download',
         'post_status'    => 'publish',
-        'posts_per_page' => ( $limit <= 0 ) ? -1 : $limit,
+        'posts_per_page' => ( $limit < 0 ) ? -1 : $limit,
         'orderby'        => 'date',
         'order'          => $order,
     ] );
